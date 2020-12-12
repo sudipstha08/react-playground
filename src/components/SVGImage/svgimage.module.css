@@ -1,0 +1,14 @@
+.loginSVG{
+    width: 50%;
+    float: left;
+    height: 100vh;
+}
+
+.loginSVG img{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    justify-content: center;
+    margin: auto;
+    padding: 30px;
+}

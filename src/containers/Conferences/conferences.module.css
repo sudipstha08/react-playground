@@ -1,0 +1,21 @@
+.myitemOuterWrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.hostMeetingWrapper{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.hostMeetingWrapper button{
+   padding: 60px;
+   border: 1px solid gray;
+   border-radius: 10px;
+   outline: none;
+   background-color: #fff;
+   font-size: 20px;
+}

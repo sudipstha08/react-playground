@@ -1,0 +1,18 @@
+.conference{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px 10px 20px 10px;
+}
+
+.conference label{
+    padding: 5px 20px;
+    margin-right: 20px;
+}
+
+.conference input{
+    width: 45%;
+    height: 35px;
+    border: 1px solid gray;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+}

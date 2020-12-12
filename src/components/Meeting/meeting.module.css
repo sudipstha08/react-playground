@@ -1,0 +1,47 @@
+.meetingOuterWrapper{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.meetingDate{
+    padding: 5px;
+    margin: auto;
+    width: 50px;
+    border-right: 1px solid blue;
+    text-align: center;
+}
+
+.meetingSchedule{
+    padding-left: 10px;
+    width: 250px;
+    line-height: 5px;
+}
+.meetingAnchor{
+    margin-top: 25px;
+}
+
+
+.meetingEditDelete{
+    padding: 5px;
+    margin-right: 20px ;
+    border-radius: 10px;
+    background-color: #091936;
+    color: white;
+}
+
+.meetingOuterWrapper button{
+    padding: 10px;
+    height: 150px;
+    background-color: #091936;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    width: 100px;
+    float: right;
+}

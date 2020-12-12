@@ -1,0 +1,19 @@
+.confDetail{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px 10px 20px 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.confDetail label{
+    padding: 5px 20px;
+    margin-right: 8px;
+}
+
+.confDetail textarea{
+    width: 100%;
+    border: 1px solid gray;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+}

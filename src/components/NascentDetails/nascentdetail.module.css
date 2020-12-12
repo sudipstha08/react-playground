@@ -1,0 +1,15 @@
+.nascentInnerText{
+    float: left;
+    width: 40%;
+}
+
+.nascentInnerText p{
+    float: left;
+    width: 50%;
+    padding: 12px;
+}
+
+.text{
+    font-size: 20px;
+    color: gray;
+}

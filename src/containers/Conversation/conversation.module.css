@@ -1,0 +1,30 @@
+.myitemOuterWrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.conversationText{
+    color: black;
+    line-height: 10px;
+    margin-left: 40px;
+}
+
+.today{
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 100px;
+    margin: auto;
+    padding: 5px 10px;
+    color: black;
+    position: absolute;
+    top: 185px;
+    right: 550px;
+    background-color: white;
+}
+
+.conversationMessage{
+    padding: 13px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}

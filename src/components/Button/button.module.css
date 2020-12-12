@@ -1,0 +1,15 @@
+.btn{
+    width: 70%;
+    height: 2.4rem;
+    color: #fff;
+    border-radius: 0.3rem;
+    display: block;
+    margin: 0 auto;
+    background: rgb(49, 49, 146);
+    border: 1px solid black;
+    outline: none;
+}
+
+.btn:hover{
+    background-color: blue;
+}

@@ -1,0 +1,56 @@
+.newProjectWrapper{
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+.newProjectHeader{
+    margin-left: 155px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.innerProjectWrapper{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.innerProjectForm{
+    float: left;
+    width: 45%;
+    padding: 30px;
+    padding-left: 100px;
+}
+
+.innerProjectForm label{
+    margin-bottom: 10px;
+}
+
+.innerProjectForm input{
+    width: 100%;
+    height: 35px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.innerProjectForm textarea{
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.innerProjectForm label{
+    color: gray;
+    font-size: 18px;
+}
+
+.projectForm{
+    margin-bottom: 100px;
+}

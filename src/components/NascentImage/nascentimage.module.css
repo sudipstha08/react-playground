@@ -1,0 +1,7 @@
+.nascentInnerImage{
+    width: 50%;
+}
+.nascentInnerImage img{
+    width: 75%;
+    float: right;
+}

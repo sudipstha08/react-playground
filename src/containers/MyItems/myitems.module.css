@@ -1,0 +1,4 @@
+.myitemOuterWrapper{
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,30 @@
+.nascentOuterWrapper{
+    height: 90vh;
+    width: 100%;
+    margin-top: 66px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nascentAvatar{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin: 60px 70px 20px 70px;
+}
+
+.text{
+    font-size: 20px;
+    color: gray;
+}
+
+.nascentHeaderText{
+   margin-left: 20px;
+}
+
+
+.nascentInnerWrapper{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}

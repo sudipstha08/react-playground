@@ -1,0 +1,103 @@
+.loginPage{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.togglePassword{
+    position: absolute;
+    top: 49.5%;
+    right: 12.5%;
+    color: gray;
+}
+
+
+.loginForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 50%;
+    background-color: #091936;
+}
+
+
+.loginFormText{
+    margin: auto;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    line-height: 2.7rem;
+    font-family: Quicksand-Bold, Quicksand;
+    letter-spacing: 0.025rem;
+    font-weight: 700;
+    width: 100%;
+}
+
+.loginForm p{
+    color: gray;
+}
+
+.signinPolicy{
+    font-size: 0.7rem;
+    color: #fff;
+    margin-left: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInButton{
+    width: 60%;
+    height: 3rem;
+    color: #fff;
+    border-radius: 0.3rem;
+    display: block;
+    margin: 0 auto;
+    background: rgb(23, 23, 59);
+    border: 1px solid black;
+    outline: none;
+}
+
+
+.policy{
+    color: gray;
+    margin-left: 5px;
+}
+
+.loginForm input{
+    padding: 15px;
+    width: 60%;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.forgetSignIn{
+    margin-left: 5px;
+    color: rgb(48, 13, 245);
+}
+
+
+@media only screen and (max-width : 800px){
+    .loginSVG{
+        display: none;
+    }
+
+    .loginForm{
+        width: 80%;
+        margin: auto;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .togglePassword{
+        position: absolute;
+        right: 230px;
+    }
+}
+

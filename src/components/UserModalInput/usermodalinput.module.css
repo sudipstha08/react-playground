@@ -1,0 +1,16 @@
+.contentSection{
+    margin-bottom: 10px;
+}
+.contentSection label{
+    color: gray;
+}
+
+.contentSection input{
+    width: 100%;
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0px;
+    outline: none;
+}

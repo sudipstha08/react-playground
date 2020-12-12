@@ -1,0 +1,14 @@
+.myitemOuterWrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.btn{
+    border: none;
+    outline: none;
+    background-color: #091936;
+    color: #fff;
+    padding: 5px;
+    width: 150px;
+}

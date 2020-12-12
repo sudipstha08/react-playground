@@ -1,0 +1,65 @@
+.profileHeader a{
+    margin-left: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+}
+
+.userProfileWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.userProfileWrapper p{
+    color: gray;
+}
+
+.userProfileWrapper form {
+    width: 470px;
+    height: auto;
+}
+
+.inputs{
+    margin: 20px 0;
+}
+
+.userProfileWrapper form label{
+    float: left;
+    padding: 10px;
+    width: 170px;
+    height: 35px;
+    margin: 8px 0;
+}
+
+.userProfileWrapper form .inputOne{
+    height: 35px;
+    width: 300px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    outline: none;
+    padding: 15px;
+    margin: 8px 0;
+    float: right;
+}
+
+.password{
+    float: right;
+    width: 300px;
+    padding: 15px;
+    height: 35px;
+    border-radius: 30px;
+    outline: none;
+    margin-bottom: 8px;
+    border: 1px solid gray;
+}
+.premium{
+    float:right;
+    margin-top:-70px;
+    margin-right:150px;
+    color: #091936;
+}
