@@ -26,6 +26,7 @@
     "react-animations": "^1.0.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
+    "react-toastify": "^10.0.5",
     "valtio": "^1.13.2"
   },
   "devDependencies": {
@@ -34,7 +35,6 @@
     "@commitlint/types": "^19.0.3",
     "@tanstack/eslint-plugin-query": "^5.43.1",
     "@types/lodash": "^4.17.5",
-    "@types/radium": "^0.24.8",
     "@types/react": "^18.2.66",
     "@types/react-animations": "^1.0.3",
     "@types/react-dom": "^18.2.22",

@@ -1,6 +1,7 @@
 import { FC, useCallback, useState } from 'react'
 import { Rate, Tooltip } from 'antd'
 import { HeartOutlined, HeartFilled } from '@ant-design/icons'
+import { toast } from 'react-toastify'
 import { ISpell } from '@/interfaces'
 import { spellStore } from '@/store'
 import { SESSION_KEY } from '@/constants'
@@ -26,11 +27,13 @@ export const SpellCard: FC<ICard> = ({ id, name, level, isFav = false }) => {
     if (isFavourite) {
       const filteredFavItems = favItems.filter((item: string) => item !== id)
       localStorage.setItem(SESSION_KEY, JSON.stringify(filteredFavItems))
+      toast.success(`${name} Removed from favourites`)
     } else {
       favItems.push(id)
       localStorage.setItem(SESSION_KEY, JSON.stringify(favItems))
+      toast.success(`${name} added to favourites`)
     }
-  }, [isFavourite, id])
+  }, [isFavourite, id, name])
 
   return (
     <div
