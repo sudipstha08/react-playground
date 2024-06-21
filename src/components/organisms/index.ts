@@ -1,1 +1,2 @@
-export const organisms = 'organisms'
+export * from './Spells'
+export * from './Modal'

@@ -13,7 +13,7 @@ export const API: AxiosInstance = axios.create({
 
 /**
  *  Request interceptor
- * */
+ **/
 API.interceptors.request.use(
   async axiosConfig => {
     return axiosConfig
