@@ -29,9 +29,6 @@
 | `husky`       | pre-cmmit hooks   | [Husky](https://typicode.github.io/husky/)         |
 | `stylelint`   | css linter        | [Stylelint](https://stylelint.io/)                 |
 
-## Motivation
-
-I was in need of a good, solid, reliable and fast boilerplate to work with React/Typescript projects. I was working with Create-React-App and Webpack previously. Later on I discovered Vite which is a good alternative fro CRA
 
 # License
 
