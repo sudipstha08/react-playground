@@ -3,14 +3,12 @@ import { spellService } from '@/services'
 import { ISpell } from '@/interfaces'
 
 /**
- * useSpells
- *
  * @param enabled => query enable/disabled boolean
  * @returns useQuery response
  */
 export const useSpells = ({ enabled }: { enabled: boolean }) => {
   return useQuery({
-    queryKey: ['fetchSpellsa'],
+    queryKey: ['FetchSpells'],
     queryFn: spellService.fetchSpells,
     enabled: enabled,
     refetchOnWindowFocus: false,
@@ -33,8 +31,6 @@ export const useSpells = ({ enabled }: { enabled: boolean }) => {
 }
 
 /**
- * useSpell
- *
  * @param enabled => query enable/disabled boolean
  * @returns useQuery response
  */
@@ -46,7 +42,7 @@ export const useSpell = ({
   spellId: string
 }) => {
   return useQuery({
-    queryKey: ['fetchSpellNyId', spellId],
+    queryKey: ['FetchSpellNyId', spellId],
     queryFn: spellService.fetchSpell,
     enabled: enabled,
     refetchOnWindowFocus: false,

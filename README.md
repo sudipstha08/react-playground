@@ -12,6 +12,7 @@
 
 ## Quick Start
 - Install dependencies `yarn install`
+- Create `.env` file. Take `.env.example` as reference
 - Start dev server `yarn start-dev`
 
 ## Tech Stacks :package:
