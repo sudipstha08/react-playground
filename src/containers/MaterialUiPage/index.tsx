@@ -1,16 +1,19 @@
-import { FC, useState } from 'react'
+import { FC, useRef, useState } from 'react'
 import { produce } from 'immer'
 import {
   Box,
   Button,
   createTheme,
   Paper,
+  Portal,
   Rating,
   styled,
   ThemeProvider,
   Typography,
+  Stack,
 } from '@mui/material'
 import { deepOrange, yellow } from '@mui/material/colors'
+import Item from 'antd/es/list/Item'
 
 const DemoButton = styled(Button)(() => ({
   color: 'red',
@@ -67,6 +70,12 @@ const baseState: Array<{ title: string; done?: boolean }> = [
 
 export const MaterialUiPage: FC = () => {
   const [rating, setRating] = useState<number | null>(null)
+  const [show, setShow] = useState(false)
+  const container = useRef(null)
+
+  const handleShowClick = () => {
+    setShow(!show)
+  }
 
   const nextState = produce(baseState, draft => {
     draft[1].done = true
@@ -130,13 +139,33 @@ export const MaterialUiPage: FC = () => {
           </DemoButton>
         </Paper>
       </Box>
-      <Box>
+      <Box sx={{ padding: '2rem' }}>
         {nextState?.map((state, idx) => (
           <Box key={idx}>
             <Typography>{state.title}</Typography>
           </Box>
         ))}
       </Box>
+      <div>
+        <button type="button" onClick={handleShowClick}>
+          {show ? 'Unmount children' : 'Mount children'}
+        </button>
+        <Box sx={{ p: 1, my: 1, border: '1px solid' }}>
+          It looks like I will render here.
+          {show ? (
+            <Portal container={() => container.current!}>
+              <span>But I actually render here!</span>
+            </Portal>
+          ) : null}
+        </Box>
+        <Box sx={{ p: 1, my: 1, border: '1px solid red' }} ref={container} />
+      </div>
+
+      <Stack spacing={3}>
+        <Item>Item 1</Item>
+        <Item>Item 2</Item>
+        <Item>Item 3</Item>
+      </Stack>
     </ThemeProvider>
   )
 }
