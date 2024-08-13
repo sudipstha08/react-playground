@@ -3,6 +3,7 @@ import { Person } from 'src/containers/MaterialTable/components'
 //nested data is ok, see accessorKeys in ColumnDef below
 export const simpleTableData: Person[] = [
   {
+    id: 1,
     name: {
       firstName: 'John',
       lastName: 'Doe',
@@ -12,6 +13,8 @@ export const simpleTableData: Person[] = [
     state: 'Kentucky',
   },
   {
+    id: 2,
+
     name: {
       firstName: 'Jane',
       lastName: 'Doe',
@@ -21,6 +24,8 @@ export const simpleTableData: Person[] = [
     state: 'Ohio',
   },
   {
+    id: 3,
+
     name: {
       firstName: 'Joe',
       lastName: 'Doe',
@@ -30,6 +35,7 @@ export const simpleTableData: Person[] = [
     state: 'West Virginia',
   },
   {
+    id: 4,
     name: {
       firstName: 'Kevin',
       lastName: 'Vandy',
@@ -39,6 +45,7 @@ export const simpleTableData: Person[] = [
     state: 'Nebraska',
   },
   {
+    id: 5,
     name: {
       firstName: 'Joshua',
       lastName: 'Rolluffs',
@@ -48,6 +55,7 @@ export const simpleTableData: Person[] = [
     state: 'Nebraska',
   },
   {
+    id: 6,
     name: {
       firstName: 'Mike',
       lastName: 'Rolluffs',
@@ -57,6 +65,7 @@ export const simpleTableData: Person[] = [
     state: 'Nebraska',
   },
   {
+    id: 7,
     name: {
       firstName: 'Luke',
       lastName: 'Rolluffs',
