@@ -161,7 +161,7 @@ export const MaterialUiPage: FC = () => {
         <Box sx={{ p: 1, my: 1, border: '1px solid red' }} ref={container} />
       </div>
 
-      <Stack spacing={3}>
+      <Stack spacing={3} data-testid="item-stack">
         <Item>Item 1</Item>
         <Item>Item 2</Item>
         <Item>Item 3</Item>
