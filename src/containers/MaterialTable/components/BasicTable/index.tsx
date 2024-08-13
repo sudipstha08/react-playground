@@ -3,8 +3,11 @@ import {
   MaterialReactTable,
   MRT_TableInstance,
   useMaterialReactTable,
+  MRT_ToolbarAlertBanner,
   type MRT_ColumnDef,
+  MRT_TablePagination,
 } from 'material-react-table'
+import DeleteIcon from '@mui/icons-material/Delete'
 import { simpleTableData } from '../../utils'
 
 export type Person = {
@@ -60,14 +63,10 @@ export const BasicTable = () => {
             onClick={() => handleDelete(row.original.id)}
             key={row.original.id}
             style={{
-              background: 'red',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
               padding: '5px 10px',
             }}
           >
-            Delete
+            <DeleteIcon sx={{ color: 'red' }} />
           </button>
         ),
       },
@@ -104,5 +103,14 @@ export const BasicTable = () => {
     }
   }, [table])
 
-  return <MaterialReactTable table={table} />
+  return (
+    <>
+      <MaterialReactTable table={table} />
+      <MRT_ToolbarAlertBanner
+        table={table}
+        data-testid="material-alert-banner"
+      />
+      <MRT_TablePagination table={table} />
+    </>
+  )
 }
