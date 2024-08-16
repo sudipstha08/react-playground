@@ -27,7 +27,7 @@
 | `eslint`      | linting           | [Eslint](https://eslint.org/)                      |
 | `prettier`    | code formatter    | [Prettier](https://prettier.io/)                   |
 | `commitlint`  | commit convebtion | [Commitlint](https://commitlint.js.org/)           |
-| `husky`       | pre-cmmit hooks   | [Husky](https://typicode.github.io/husky/)         |
+| `husky`       | pre-commit hooks   | [Husky](https://typicode.github.io/husky/)         |
 | `stylelint`   | css linter        | [Stylelint](https://stylelint.io/)                 |
 
 
