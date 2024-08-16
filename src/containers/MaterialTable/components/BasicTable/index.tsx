@@ -9,6 +9,7 @@ import {
 } from 'material-react-table'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { simpleTableData } from '../../utils'
+import { toast } from 'react-toastify'
 
 export type Person = {
   id: number
@@ -77,6 +78,7 @@ export const BasicTable = () => {
   const handleDelete = (id: number) => {
     // eslint-disable-next-line no-console
     console.log(id)
+    toast.success('User deleted successfully')
     // setData(prevData => prevData.filter(row => row.id !== id))
     // tableRef?.current && tableRef.current.resetRowSelection()
     // const selectedRowCount = table.getSelectedRowModel().rows.length

@@ -11,9 +11,9 @@ import {
   ThemeProvider,
   Typography,
   Stack,
+  ListItem,
 } from '@mui/material'
 import { deepOrange, yellow } from '@mui/material/colors'
-import Item from 'antd/es/list/Item'
 
 const DemoButton = styled(Button)(() => ({
   color: 'red',
@@ -162,9 +162,9 @@ export const MaterialUiPage: FC = () => {
       </div>
 
       <Stack spacing={3} data-testid="item-stack">
-        <Item>Item 1</Item>
-        <Item>Item 2</Item>
-        <Item>Item 3</Item>
+        <ListItem>Item 1</ListItem>
+        <ListItem>Item 2</ListItem>
+        <ListItem>Item 3</ListItem>
       </Stack>
     </ThemeProvider>
   )
