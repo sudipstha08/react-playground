@@ -3,7 +3,6 @@ import { produce } from 'immer'
 import {
   Box,
   Button,
-  createTheme,
   Paper,
   Portal,
   Rating,
@@ -12,8 +11,10 @@ import {
   Typography,
   Stack,
   ListItem,
+  Theme,
 } from '@mui/material'
-import { deepOrange, yellow } from '@mui/material/colors'
+import { deepOrange } from '@mui/material/colors'
+import { theme } from 'src/theme/material'
 
 const DemoButton = styled(Button)(() => ({
   color: 'red',
@@ -22,40 +23,6 @@ const DemoButton = styled(Button)(() => ({
     fontSize: '1.5rem',
   },
 }))
-
-const theme = createTheme({
-  palette: {
-    primary: deepOrange,
-    secondary: {
-      main: yellow[700],
-      dark: yellow[900],
-    },
-  },
-  components: {
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          padding: '14px',
-          borderRadius: '12px',
-        },
-      },
-    },
-    MuiButton: {
-      defaultProps: {
-        disableRipple: true,
-        disableElevation: true,
-      },
-      styleOverrides: {
-        root: {
-          width: '100%',
-          '&:hover': {
-            fontSize: '1.5rem',
-          },
-        },
-      },
-    },
-  },
-})
 
 const baseState: Array<{ title: string; done?: boolean }> = [
   {
@@ -83,7 +50,7 @@ export const MaterialUiPage: FC = () => {
   })
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme as Theme}>
       <Box
         sx={{
           width: '100vw',
@@ -117,7 +84,9 @@ export const MaterialUiPage: FC = () => {
           >
             Rate Me
           </Button>
-          <Typography variant="h2">Hi there</Typography>
+          <Typography variant="h2" color={theme.palette.custom.border}>
+            Hi there
+          </Typography>
           <Typography variant="h4">Rating: {rating}</Typography>
           <Rating value={rating} onChange={(_, value) => setRating(value)} />
         </Box>

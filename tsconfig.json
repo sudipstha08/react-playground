@@ -20,6 +20,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
+    "types": ["react", "vite/client"],
+    // "typeRoots": ["@types", "node_modules/@types"],
     "paths": {
       "@/components": ["./src/components"],
       "@/constants": ["./src/constants"],
@@ -30,10 +32,10 @@
       "@/services": ["./src/services"],
       "@/store": ["./src/store"],
       "@/utils": ["./src/utils"],
-      "@/queries": ["./src/queries"],
+      "@/queries": ["./src/queries"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "@types"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules"]
 }
