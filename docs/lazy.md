@@ -129,6 +129,67 @@ One important thing to remember is that while lazy loading improves performance,
 Firstly, the extra lines of code, to be added to the existing ones, to implement lazy load makes the code a bit complicated.
 Secondly, lazy loading may affect the website’s ranking on search engines sometimes, due to improper indexing of the unloaded content.
 
+React.lazy is a function in React that allows you to load components lazily through code splitting. This means that instead of loading all components upfront when your app initially loads, you can split your code into smaller chunks and load components only when they are needed. This improves the performance of your app by reducing the initial load time.
+
+Here’s how it works:
+
+Dynamic Import: React.lazy takes a function that returns a dynamic import statement. This statement is a promise that resolves to the component you want to load lazily.
+
+Suspense: Since the component is loaded asynchronously, you need to wrap it in a React.Suspense component, which allows you to specify a fallback UI (like a loading spinner) that will be shown while the lazy component is being loaded.
+
+React determines when a lazy-loaded component is needed based on the render cycle. Here’s how it works:
+
+1. Render Cycle:
+React goes through a render cycle to determine which components need to be rendered based on the current state and props.
+During this cycle, React checks the JSX tree from the top-level component downwards.
+If it encounters a component wrapped in React.lazy, it triggers the dynamic import of that component.
+2. Component Hierarchy:
+The need for a component depends on where it appears in the component hierarchy and whether the parent components are being rendered.
+For example, if a lazy-loaded component is within a conditional block or a route that hasn’t been matched yet, React won’t attempt to load it until those conditions are met.
+3. Conditional Rendering:
+Lazy-loaded components are only fetched when they are included in the JSX to be rendered. This can happen based on conditions like:
+User interactions (e.g., clicking a button).
+Navigation changes (e.g., changing routes).
+State changes that cause conditional rendering.
+
+React determines when a lazy-loaded component is needed by examining the JSX that needs to be rendered during the render cycle. If the lazy-loaded component is part of the JSX that should be rendered, React triggers the dynamic import and loads the component. If it’s not part of the JSX due to conditions not being met, React doesn’t attempt to load it.
+
+Without React.lazy: The component is loaded into the bundle during the initial load, even if it’s not rendered right away.
+With React.lazy: The component is only loaded when it’s actually needed, reducing the initial load time and improving performance, especially for large or infrequently used components.
+
+Lazy loading routes in React is a performance optimization technique that helps in reducing the initial load time of a web application. When routes are lazy-loaded, only the components needed for the current route are loaded initially, and the rest are loaded on demand when the user navigates to those routes. Here's why this is beneficial:
+
+```
+import React, { Suspense, lazy } from "react";
+
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+const About = lazy(() => import("./Aboutus"));
+
+const HomeComp = lazy(() => import("./Home"));
+
+const Contact = lazy(() => import("./contactus"));
+
+function App() {
+  return (
+    <>
+      <Router>
+        <Suspense fallback={<div className="loading">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route path="/" element={<HomeComp />} />
+
+              <Route path="/about" element={<About />} />
+
+              <Route path="/Contact" element={<Contact />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </Router>
+    </>
+  );
+}
+```
 
 ## References
 - https://web.dev/explore/fast#lazy-load-images-and-video
