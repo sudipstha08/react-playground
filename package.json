@@ -27,7 +27,7 @@
     "@types/node": "^22.4.1",
     "antd": "^5.18.3",
     "axios": "^1.7.2",
-    "dayjs": "^1.11.12",
+    "dayjs": "^1.11.13",
     "immer": "^10.1.1",
     "lodash": "^4.17.21",
     "material-react-table": "^2.13.1",
