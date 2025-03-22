@@ -27,7 +27,7 @@ export function FaceDetectionV2() {
   const startVideo = () => {
     setCaptureVideo(true)
     navigator.mediaDevices
-      .getUserMedia({ video: { width: 800 } })
+      .getUserMedia({ video: { width: 300 } })
       .then(stream => {
         const video = videoRef.current
         video.srcObject = stream

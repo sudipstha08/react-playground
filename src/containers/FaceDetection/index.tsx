@@ -10,8 +10,6 @@ export const FaceDetection: FC = () => {
   const [capturedImage, setCapturedImage] = useState<string | null>(null)
   const interval = useRef<NodeJS.Timeout>()
 
-  console.log('captured image', capturedImage)
-
   useEffect(() => {
     const loadModels = async () => {
       try {
@@ -23,27 +21,21 @@ export const FaceDetection: FC = () => {
           faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL),
           faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
         ])
-        console.log('Modal loaded successfully')
       } catch (err) {
-        console.log('Error loading models', err)
+        console.error('Error loading models', err)
       }
     }
 
     const startVideo = async () => {
       try {
-        console.log('starting videeo')
-        const stream = await navigator.mediaDevices
-          .getUserMedia({
-            video: true,
-          })
-          .then(stream => {
-            videoRef.current.srcObject = stream
-            videoRef.current.play()
-          })
-        // console.log('stean', stream)
-        // if (videoRef.current) {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+        })
 
-        // }
+        if (stream && videoRef?.current) {
+          videoRef.current.srcObject = stream
+          videoRef.current.play()
+        }
       } catch (error) {
         console.error('Error accessing webcam:', error)
       }
@@ -52,7 +44,6 @@ export const FaceDetection: FC = () => {
     ;(async () => {
       await loadModels()
       await startVideo()
-      console.log('Helloooooo')
     })()
 
     return () => {
@@ -66,7 +57,6 @@ export const FaceDetection: FC = () => {
   useEffect(() => {
     const captureImage = () => {
       if (videoRef.current && canvasRef.current) {
-        console.log('capturing images')
         const context = canvasRef.current.getContext('2d')
 
         if (context) {
@@ -82,7 +72,6 @@ export const FaceDetection: FC = () => {
 
           // Clear the video source
           videoRef.current.srcObject = null
-          console.log('Video stopped after capturing image')
           clearInterval(interval.current)
         }
       }
@@ -90,8 +79,7 @@ export const FaceDetection: FC = () => {
 
     const detectFace = async () => {
       try {
-        if (videoRef.current) {
-          console.log('detecting face ', videoRef.current)
+        if (videoRef.current && canvasRef?.current) {
           const displaySize = {
             width: videoWidth,
             height: videoHeight,
@@ -99,16 +87,18 @@ export const FaceDetection: FC = () => {
 
           canvasRef.current.innerHTML = faceapi.createCanvasFromMedia(
             videoRef.current,
+          ) as unknown as string
+
+          faceapi.matchDimensions(
+            canvasRef.current as faceapi.IDimensions,
+            displaySize,
           )
 
-          faceapi.matchDimensions(canvasRef.current, displaySize)
-
-          const detection = await faceapi
-            .detectAllFaces(
-              videoRef.current,
-              new faceapi.TinyFaceDetectorOptions({}),
-            )
-            .withFaceLandmarks()
+          const detection = await faceapi.detectAllFaces(
+            videoRef.current,
+            new faceapi.TinyFaceDetectorOptions({ scoreThreshold: 0.8 }),
+          )
+          // .withFaceLandmarks()
 
           const resizedDetections = faceapi.resizeResults(
             detection,
@@ -119,9 +109,9 @@ export const FaceDetection: FC = () => {
             canvasRef.current &&
             faceapi.draw.drawDetections(canvasRef.current, resizedDetections)
 
-          canvasRef &&
-            canvasRef.current &&
-            faceapi.draw.drawFaceLandmarks(canvasRef.current, resizedDetections)
+          // canvasRef &&
+          //   canvasRef.current &&
+          //   faceapi.draw.drawFaceLandmarks(canvasRef.current, resizedDetections)
           // canvasRef &&
           //   canvasRef.current &&
           //   faceapi.draw.drawFaceExpressions(
@@ -129,10 +119,12 @@ export const FaceDetection: FC = () => {
           //     resizedDetections,
           //   )
 
-          console.log('resizedDetections==============', resizedDetections)
-          console.log('detection==============', detection)
-
-          if (detection && canvasRef.current) {
+          if (
+            detection &&
+            detection?.length &&
+            canvasRef.current &&
+            detection?.[0]?.classScore > 0.97
+          ) {
             captureImage() // Auto-capture when a face is detected
           }
 
