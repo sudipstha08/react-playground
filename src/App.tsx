@@ -7,9 +7,11 @@ import {
   NotFoundPage,
   MaterialUiPage,
   MaterialTable,
+  FaceDetection,
 } from '@/containers'
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
+import { FaceDetectionV2 } from 'src/containers/FaceDetectionV2'
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
       <Routes>
         <Route path="/" element={<SpellsPage />} />
         <Route path="/materialui" element={<MaterialUiPage />} />
+        <Route path="/face-detect" element={<FaceDetection />} />
+        <Route path="/face-detectv2" element={<FaceDetectionV2 />} />
         <Route path="/material-table" element={<MaterialTable />} />
         <Route element={<NotFoundPage />} path="*" />
       </Routes>
