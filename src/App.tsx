@@ -12,6 +12,8 @@ import {
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
 import { FaceDetectionV2 } from 'src/containers/FaceDetectionV2'
+import { FaceDetectionV4 } from 'src/containers/FaceDetectionV4'
+import { CanvasPage } from 'src/containers/Canvas'
 
 function App() {
   return (
@@ -32,7 +34,9 @@ function App() {
         <Route path="/materialui" element={<MaterialUiPage />} />
         <Route path="/face-detect" element={<FaceDetection />} />
         <Route path="/face-detectv2" element={<FaceDetectionV2 />} />
+        <Route path="/face-detectv4" element={<FaceDetectionV4 />} />
         <Route path="/material-table" element={<MaterialTable />} />
+        <Route path="/canvas" element={<CanvasPage />} />
         <Route element={<NotFoundPage />} path="*" />
       </Routes>
     </QueryClientProvider>
